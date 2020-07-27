@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="javaScript 简介 如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。 JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。 JavaScript 在用户浏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js 基础入门">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/js-started/index.html">
+<meta property="og:site_name" content="Hhpon">
+<meta property="og:description" content="javaScript 简介 如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。 JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。 JavaScript 在用户浏">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/constitute.gif">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/node.gif">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/name.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/if.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/if-more.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/switch.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/math.png">
+<meta property="og:updated_time" content="2020-07-22T23:15:00.225Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Js 基础入门">
+<meta name="twitter:description" content="javaScript 简介 如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。 JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。 JavaScript 在用户浏">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/04/js-started/constitute.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/09/04/js-started/">
+
+
+
+
+
+  <title>Js 基础入门 | Hhpon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hhpon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/04/js-started/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hhpon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hhpon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Js 基础入门</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-04T18:47:46+08:00">
+                2019-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="javaScript-简介"><a href="#javaScript-简介" class="headerlink" title="javaScript 简介"></a>javaScript 简介</h3><hr>
+<p>如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。</p>
+<p>JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。</p>
+<p>JavaScript 在用户浏览器内部运行，JavaScript 能够检测和响应特定的用户操作，比如鼠标点击和键盘操作。更重要的是： 几乎每种 Web 浏览器都支持 JavaScript。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">课下阅读：</span><br><span class="line">JavaScript 的祖先可以追溯到 20 世纪 90 年代中期，首先是 Netscape Navigator 2 引入了 1.0 版本。 随后，“欧洲计算机制造商协会”（ECMA）开始介入，制定了 ECMAScript规范，奠定了JavaScript迅猛发展的基础。与此同时，微软开发了自己版本的 JavaScript：jScript，在 IE 浏览器上使用。</span><br><span class="line"></span><br><span class="line">Netscape在最初将其脚本语言命名为LiveScript，后来Netscape在与Sun合作之后将其改名为JavaScript。JavaScript最初受Java启发而开始设计的，目的之一就是“看上去像Java”，因此语法上有类似之处，一些名称和命名规范也借自Java。最终的结果JavaScript和java的关系就是： 雷锋和雷峰塔、周杰和周杰伦的关系啦！</span><br></pre></td></tr></table></figure>
+
+<h4 id="javaScript-是脚本语言"><a href="#javaScript-是脚本语言" class="headerlink" title="javaScript 是脚本语言"></a>javaScript 是脚本语言</h4><hr>
+<p>脚本英文为 Script。脚本简单地说就是一条条的文字命令，并按程序顺序执行。比如 php 也是脚本语言。</p>
+<p>它和 java 等编程语言不同的是，JavaScript 语法比较松散。要求的不像编程语言那么严格。</p>
+<p>比如 java： var num:int = 10;</p>
+<p>而 JavaScript： let num = 10;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">拓展阅读：</span><br><span class="line"></span><br><span class="line">1.脚本语言(JavaScript,VBscript等)介于HTML和C,C++,Java,C#等编程语言之间。 HTML通常用于格式化和链结文本。而编程语言通常用于向机器发出一系列复杂的指令。</span><br><span class="line"></span><br><span class="line">2.脚本语言与编程语言也有很多相似地方，其函数与编程语言比较相象一些,其也涉及到变量。与编程语言之间最大的区别是编程语言的语法和规则更为严格和复杂一些.</span><br><span class="line"></span><br><span class="line">3.与程序代码的关系:脚本也是一种语言，其同样由程序代码组成。 注：脚本语言一般都有相应的脚本引擎来解释执行。 他们一般需要解释器才能运行。JAVASCRIPT,ASP,PHP,PERL都是脚本语言。C/C++编译、链接后，可形成独立执行的exe文件。</span><br><span class="line"></span><br><span class="line">4.脚本语言是一种解释性的语言,例如vbscript,javascript,installshield script等等,它不象c\c++等可以编译成二进制代码,以可执行文件的形式存在. 脚本语言不需要编译，可以直接用，由解释器来负责解释。</span><br></pre></td></tr></table></figure>
+
+<h4 id="javascript-组成"><a href="#javascript-组成" class="headerlink" title="javascript 组成"></a>javascript 组成</h4><hr>
+<img src="/2019/09/04/js-started/constitute.gif" title="组成">
+
+<p>第一部分：ECMAScript</p>
+<p>又 ECMA 组织制定语句，语法。它定义了脚本语言的所有属性、方法和对象。其他语言可以实现 ECMAScript 来作为功能的基准，JavaScript 就是这样：</p>
+<p>第二部分：BOM</p>
+<p>broswer object model：浏览器对象模型</p>
+<p>比如：</p>
+<p>1.弹出新的浏览器窗口 2.移动、关闭浏览器窗口以及调整窗口大小 3.提供用户屏幕分辨率详细信息的屏幕对象</p>
+<p>第三部分：DOM</p>
+<p>document object model：文档对象模型.</p>
+<p>DOM 将把整个页面规划成由节点层级构成的文档。</p>
+<img src="/2019/09/04/js-started/node.gif" title="组成">
+
+<h4 id="javaScript-作用"><a href="#javaScript-作用" class="headerlink" title="javaScript 作用"></a>javaScript 作用</h4><hr>
+<p>对于制作一个网页而言！</p>
+<p>HTML:给网页添加结构的；骨骼</p>
+<p>CSS:给网页添加样式的；外观</p>
+<p>Javascript:给网页添加功能，交互的；行为</p>
+<h3 id="学习-JavaScript-你要知道的"><a href="#学习-JavaScript-你要知道的" class="headerlink" title="学习 JavaScript 你要知道的"></a>学习 JavaScript 你要知道的</h3><hr>
+<p>JavaScript 在页面的位置、书写规范、执行顺序和环境等。</p>
+<h4 id="在-Web-页面里添加-JavaScript"><a href="#在-Web-页面里添加-JavaScript" class="headerlink" title="在 Web 页面里添加 JavaScript"></a>在 Web 页面里添加 JavaScript</h4><hr>
+<p>JavaScript 代码是和页面内容一起发送给浏览器的, 可以把 JavaScript 代码集成到 HTML 页面：</p>
+<p>(1). 嵌入式</p>
+<p>JavaScript 语句直接包含在 HTML 文件里，语法结构如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;javascript语句;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>(2). 外链式</p>
+<p>把 JavaScript 代码保存到单独的文件，然后利用 script 标签的 src（源）属性把这个文件包含到页面里。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/demo.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="JavaScript-基本格式"><a href="#JavaScript-基本格式" class="headerlink" title="JavaScript 基本格式"></a>JavaScript 基本格式</h4><hr>
+<p>JavaScript 程序是由一些单独的指令组成的，这些指令被称为“语句”。为了能够正确地 解释语句，浏览器对语句的书写方式有所要求。</p>
+<p>第一种方式是把每个语句一行：</p>
+<p>语句 1</p>
+<p>语句 2</p>
+<p>另一种方式是在同一行里书写多个语句，每个语句以分号表示结束。</p>
+<p>语句 1; 语句 2;</p>
+<p>为了提高代码的可读性，也为了减少无意中造成的语法错误，最好是结合上述两种方式 的优点，也就是一行书写一个语句，并且用分号表示语句结束：</p>
+<p>语句 1;</p>
+<p>语句 2;</p>
+<p>还需要注意： JavaScript 严格区分大小写。 myName 和 myname 是不一样的。</p>
+<h3 id="与用户交互"><a href="#与用户交互" class="headerlink" title="与用户交互"></a>与用户交互</h3><hr>
+<h4 id="alert-弹出警示框"><a href="#alert-弹出警示框" class="headerlink" title="alert 弹出警示框"></a>alert 弹出警示框</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"内容"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="prompt-弹出输入框"><a href="#prompt-弹出输入框" class="headerlink" title="prompt 弹出输入框"></a>prompt 弹出输入框</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(<span class="string">"参数1"</span>, <span class="string">"参数2"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>说明： 如果用户单击提示框的取消按钮，则返回 null。如果用户单击确认按钮，则返回输入字段当前显示的文本。</p>
+<h4 id="console-log-控制台输出"><a href="#console-log-控制台输出" class="headerlink" title="console.log 控制台输出"></a>console.log 控制台输出</h4><p>console.log(“内容”) 的功能是在控制台打印括号内内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'content);</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="document-write-文档打印输出"><a href="#document-write-文档打印输出" class="headerlink" title="document.write 文档打印输出"></a>document.write 文档打印输出</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"你好！"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><hr>
+<p>定义:用于保存特定的数据的容器。</p>
+<h4 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h4><p>因为页面中的数据量很大，我们需要很多容器才能装下这些数据，怎么区分这么多的容器呢？ 简单，给每个容器（我们的变量）起一个不同的名字就可以了。</p>
+<p>语法：</p>
+<p>let num = 10;</p>
+<p>以上语句，声明了一个名字为 num 的变量。 同时赋予了一个值为 10。</p>
+<p>恩， 还有一点，这个变量只能保存一次最近的数据。 以前的数据将被替换，不存在了。</p>
+<h4 id="变量名的命名规范"><a href="#变量名的命名规范" class="headerlink" title="变量名的命名规范"></a>变量名的命名规范</h4><p>变量可以用任何方式进行命名，但我们一般只使用字母、数字、美元符号（$）和下划线。</p>
+<p>1.变量命名必须以字母或是下标符号”_”或者”$”为开头。</p>
+<p>2.变量名长度不能超过 255 个字符。</p>
+<p>3.变量名中不允许使用空格。</p>
+<p>4.不用使用脚本语言中保留的关键字及保留符号作为变量名。</p>
+<p>5.变量名区分大小写。(javascript 是区分大小写的语言)</p>
+<img src="/2019/09/04/js-started/name.png">
+
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><hr>
+<ul>
+<li>数值型: Number</li>
+<li>字符型: String 只要添加了引号的都是字符型！</li>
+<li>布尔型: Boolean true\false</li>
+<li>未定义型: Nndefined -&gt; let num; 比如我们声明了变量，但是没有给值；</li>
+<li>空型: Null -&gt; let num = null;</li>
+</ul>
+<h4 id="检测数字类型-typeof-运算符"><a href="#检测数字类型-typeof-运算符" class="headerlink" title="检测数字类型 typeof 运算符"></a>检测数字类型 typeof 运算符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">10</span>); <span class="comment">// number</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><hr>
+<p>如果不能通过计算操作变量里保存的值，那么这些值的作用就是十分有限的。</p>
+<h4 id="算术操作符"><a href="#算术操作符" class="headerlink" title="算术操作符"></a>算术操作符</h4><p>(1). 基本算术操作符 进行加、减、乘、除、取模（取余）等。</p>
+<p>对应的是： +, -, *, /, %</p>
+<p>(2). 一元操作符 自加、自减</p>
+<p>对应的是： ++, - -</p>
+<h4 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h4><p>&lt;、&gt;、&gt;=、&lt;=、!=、==、===、!==</p>
+<p>所有的比较操作符只返回一个结果要么真 true 要么假 false（布尔值）</p>
+<p>== 和 ===有何区别？</p>
+<p>== ：判断值是否相等</p>
+<p>===：判断值相等类型也相同</p>
+<h4 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h4><p>包含三个操作符 与(&amp;&amp;) 或(||) 非(!)</p>
+<p>逻辑运算符的操作对象是布尔值。</p>
+<p>每个逻辑运算数返回一个布尔值 true 或者是 false。</p>
+<h4 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h4><p>作用：将等号右边结果赋值给等号左边的变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">num += <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>,</span><br><span class="line">  b = <span class="number">10</span>,</span><br><span class="line">  c = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><h4 id="转换为字符型"><a href="#转换为字符型" class="headerlink" title="转换为字符型"></a>转换为字符型</h4><h5 id="使用运算符方法转换字符型（隐式转换）"><a href="#使用运算符方法转换字符型（隐式转换）" class="headerlink" title="使用运算符方法转换字符型（隐式转换）"></a>使用运算符方法转换字符型（隐式转换）</h5><p>字符串加数字,数字就会转成字符串。 + 加号</p>
+<p>比如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">123</span> + <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">18</span> + <span class="string">"岁"</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="String-函数转换（显示转换）"><a href="#String-函数转换（显示转换）" class="headerlink" title="String() 函数转换（显示转换）"></a>String() 函数转换（显示转换）</h5><p>语法：</p>
+<p>String(数值) –&gt; 可以转换为字符型</p>
+<p>比如 String(123); –&gt; 结果为字符型的 “123”</p>
+<h5 id="toString-函数转换"><a href="#toString-函数转换" class="headerlink" title="toString()函数转换"></a>toString()函数转换</h5><p>语法：</p>
+<p>数值.toString();</p>
+<p>比如：</p>
+<p>var num = 123;</p>
+<p>num.toString() –&gt; 输出的结果为： 字符型的 “123”;</p>
+<h4 id="转换为数值型"><a href="#转换为数值型" class="headerlink" title="转换为数值型"></a>转换为数值型</h4><hr>
+<h5 id="使用运算符方法转换数值型（隐式转换）"><a href="#使用运算符方法转换数值型（隐式转换）" class="headerlink" title="使用运算符方法转换数值型（隐式转换）"></a>使用运算符方法转换数值型（隐式转换）</h5><p>数字减字符串，字符串转成数字。乘，除等跟减的转换也是一样。都可以实现隐式数据类型转换。</p>
+<p>比如：</p>
+<p>‘20’ - 10 // 10</p>
+<p>10 * ‘20’ // 200</p>
+<p>‘20’ / ‘10’ //2</p>
+<p>注意： 如果你不想让值发生变化，就直接减去 0 就好了。</p>
+<h5 id="利用-Number-数据类型转换-（显示转换）"><a href="#利用-Number-数据类型转换-（显示转换）" class="headerlink" title="利用 Number() 数据类型转换 （显示转换）"></a>利用 Number() 数据类型转换 （显示转换）</h5><p>Number()可以把任意值转换成数值。</p>
+<p>比如：</p>
+<p>Number(‘123’) 结果就是 数值型的 123</p>
+<p>Number(‘中国’) 结果是 NaN</p>
+<p>Number(‘22px’) 结果是 NaN 注意和下面 parseInt 的区别</p>
+<h5 id="利用-parseInt、-parseFloat-函数转换"><a href="#利用-parseInt、-parseFloat-函数转换" class="headerlink" title="利用 parseInt、 parseFloat 函数转换"></a>利用 parseInt、 parseFloat 函数转换</h5><p>parseFloat()把字符串转换成浮点数（小数）</p>
+<p>parseInt()把字符串转换成整数</p>
+<p>parseInt(‘22’) // 22</p>
+<p>parseInt(‘22px’) // 22 这样是允许的 注意和上面 Number 的区别</p>
+<p>parseInt(‘hello22’); // NaN 里面的数值内容必须以数字开头</p>
+<p>parseInt(22.94); // 22 只会留下整数部分</p>
+<h4 id="转换为布尔型"><a href="#转换为布尔型" class="headerlink" title="转换为布尔型"></a>转换为布尔型</h4><p>以下值转换为布尔型：false、undefined 、null、0、”” 结果为 false;<br>以下值转换为布尔型： true、1 结果为 true;</p>
+<h5 id="使用运算符方法转换布尔型（隐式转换）"><a href="#使用运算符方法转换布尔型（隐式转换）" class="headerlink" title="使用运算符方法转换布尔型（隐式转换）"></a>使用运算符方法转换布尔型（隐式转换）</h5><p>!! 使用这个符号就可以，转换为布尔型</p>
+<p>!!”123” // true</p>
+<p>!!1 // true</p>
+<h5 id="利用-Boolean-数据类型转换-（显示转换）"><a href="#利用-Boolean-数据类型转换-（显示转换）" class="headerlink" title="利用 Boolean() 数据类型转换 （显示转换）"></a>利用 Boolean() 数据类型转换 （显示转换）</h5><p>Boolean(“123”); //返回 true</p>
+<h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><hr>
+<p>顺序、选择、循环是结构化程序的基本结构。 我们前面执行的都是顺序结构， 我们现在开始学习根据不同条件而去选择执行不同的语句， 这类语句我们称为条件语句或者选择语句。</p>
+<h4 id="if-条件语句"><a href="#if-条件语句" class="headerlink" title="if 条件语句"></a>if 条件语句</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>（表达式） &#123;</span><br><span class="line"></span><br><span class="line">  语句段１； ......</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">  语句段２； ..... 　</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>功能：</p>
+<p>如果表达式为 true，则执行语句段１；否则执行语句段２。 最终只能二取一， 有你没我，有我没你。</p>
+<img src="/2019/09/04/js-started/if.png" title="if语句">
+
+<p>说明：</p>
+<ul>
+<li>可以只使用 if 省略 else 。</li>
+<li>if 后面有小括号加表达式，而 else 是没有的。</li>
+<li>表达式里面可以是判断表达式语句或者是布尔值等。</li>
+<li>如果 if 和 else 里面只有一句执行的话，可以省略花括号，否则一定要加上花括号。 建议大家还事都带上花括号。</li>
+</ul>
+<p>总结：</p>
+<p>if -else 语句是 JavaScript 中最基本的控制语句，通过它可以改变语句的执行顺序。 表达式中必须使用关系语句，来实现判断，它是作为一个布尔值来估算的。</p>
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">5</span> &gt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"正确"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"错误"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>执行情况是这样的： 先判断 if 里面的表达式的布尔值 结果是 true 则返回 if 里面的语句 console。 else 就不再执行。</p>
+<h4 id="Javascript-三元操作符"><a href="#Javascript-三元操作符" class="headerlink" title="Javascript 三元操作符"></a>Javascript 三元操作符</h4><p>如名字表示的三元运算符需要三个操作数。有时候也成为三目运算符 。 它实际等价于 if else 的简写。</p>
+<p>i++ 一元运算符</p>
+<p>a+b 二元运算符</p>
+<p>num ？ a ： b ; 三元运算符</p>
+<p>语法格式：</p>
+<p>条件表达式 ? 结果 1 : 结果 2;</p>
+<p>当满足条件时返回结果 1 否则返回结果 2。</p>
+<p>var b=5;</p>
+<p>(b == 5) ? a=”true” : a=”false”;</p>
+<p>document.write(“ ————————— “+a);</p>
+<p>结果： ————————— true</p>
+<h4 id="多分支-if-语句"><a href="#多分支-if-语句" class="headerlink" title="多分支 if 语句"></a>多分支 if 语句</h4><p>if…else 语句只能选择两种结果：要么执行真，要么执行假。但有时会出现两种以上的选择，例如：</p>
+<p>一个班的考试成绩，如果是 90 分以上，则为“优秀”；</p>
+<p>如果是 60 ～ 90 分之间的，则为“良好”；</p>
+<p>如果低于 60 分，则为“不及格”。</p>
+<p>这时可以使用 elseif（也可以写作 else if）语句来执行，该语法格式为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>（表达式<span class="number">1</span>） &#123;</span><br><span class="line"></span><br><span class="line">  语句段１； ......</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表达式<span class="number">2</span>) &#123;</span><br><span class="line"></span><br><span class="line">  语句段２； ..... 　</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(表达式<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">语句段<span class="number">3</span>； .....</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    语句段n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>功能：</p>
+<p>如果表达式 1 为 true，则执行语句段１；</p>
+<p>如果表达式 1 为 false，则继续判断表达式 2 是否为 true， 如果为 true，则执行语句段 2;</p>
+<p>如果表达式 2 为 false，则继续判断表达式 3 是否为 true， 如果为 true，则执行语句段 3;</p>
+<p>以此类推，如果以上表达式都为 false，最后执行 else 里面的语句，结束程序。</p>
+<img src="/2019/09/04/js-started/if-more.png" title="if多分支">
+
+<p>案例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">  alert(<span class="string">"你还未成年！请长大以后再来报考驾照"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &lt; <span class="number">70</span>) &#123;</span><br><span class="line">  alert(<span class="string">"恭喜您成功报考驾照！"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">"您年纪太大了！已经超过了报考驾照的年纪，请安全出行！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="switch-case-多分支判断语句"><a href="#switch-case-多分支判断语句" class="headerlink" title="switch case 多分支判断语句"></a>switch case 多分支判断语句</h4><p>多分支判断选择语句 。</p>
+<p>语法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(n)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">  执行代码块 <span class="number">1</span></span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">  执行代码块 <span class="number">2</span></span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line"> 剩余的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>功能：</p>
+<p>首先设置表达式 n（通常是一个变量）。随后表达式的值会与结构中的每个 case 的值做比较。如果存在匹配，则与该 case 关联的代码块会被执行。使用 break 来阻止代码自动地向下一个 case 运行。从上往下一次执行，如果都没找到匹配选项，则执行 default 里面的语句。</p>
+<img src="/2019/09/04/js-started/switch.png" title="switch语句">
+
+<p>当表达式的值与某一个 case 后面的常量表达式的值相等时，就执行此 case 后面的语句，若所有的 case 中的常量表达式的值都没有与表达式的值匹配的，就执行 deafault 后面的语句。</p>
+<p>注意：</p>
+<p>每一个 case 的值必需互不相同，否则会出现互相矛盾的结果.</p>
+<p>执行完一个 case 分支后，使流程跳出 switch 结构，即终止 switch 语句的执行。</p>
+<p>可以用 break 语句来实现这个目的。最后一个语句可以不加 break 语句。</p>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><hr>
+<h4 id="for-循环"><a href="#for-循环" class="headerlink" title="for 循环"></a>for 循环</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (循环的初始; 循环的条件; 循环的增量) &#123;</span><br><span class="line">  需执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (变量 = 初始值; 变量 &lt;= 结束值; 变量 = 变量 + 步进值) &#123;</span><br><span class="line">  需执行的代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="双重-for-循环"><a href="#双重-for-循环" class="headerlink" title="双重 for 循环"></a>双重 for 循环</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (外循环的初始; 外循环的条件; 外循环的增量) &#123;</span><br><span class="line">  <span class="keyword">for</span> (内循环的初始; 内循环的条件; 内循环的增量) &#123;</span><br><span class="line">    需执行的代码;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>内层循环可以看做外出循环的语句。</li>
+<li>内层循环执行的顺序也要遵循 for 循环的执行书序。</li>
+<li>外层循环执行一次，则内层循环要执行全部次数（跑完毕）。</li>
+</ul>
+<h4 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h4><p>基本格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>（条件表达式）</span><br><span class="line"></span><br><span class="line">&#123; 语句集；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该语句与 For 语句一样，当条件为真时，重复循环，否则退出循环。</p>
+<p><strong>For 与 while 语句</strong></p>
+<p>两种语句都是循环语句，使用 For 语句在处理有关数字时更易看懂，也较紧凑；</p>
+<p>而 while 循环对复杂的语句效果 更特别。</p>
+<h4 id="break-和-continue-语句"><a href="#break-和-continue-语句" class="headerlink" title="break 和 continue 语句"></a>break 和 continue 语句</h4><p>break 语句使得循环从 For 或 while 中跳出，continue 使得跳过循环内剩余的语句而进入下一次循环。</p>
+<h3 id="函数-function"><a href="#函数-function" class="headerlink" title="函数 function"></a>函数 function</h3><hr>
+<p>函数:相当于一个工具，比如螺丝刀，当我们想使用的时候拿出来用，当我们不想使用的时候就放在那不起作用。而这个工具是由我们自己来创造的。<br>函数名:就是我们为工具起的名字<br>语句块:就是我们造的工具要实现的功能。</p>
+<h4 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h4><p>跟 let 一样声明变量一样的。 我们的函数也需要一个关键字来进行声明，具体格式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">语句块；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>function 是小写，注意区分。<br>函数名是自己定义的名字。 比如 fun 、 myFun 等。<br>函数不调用， 自己是不执行的。</p>
+<h4 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h4><p>函数声明完毕之后， 需要调用函数，才会执行函数里面的语句块。</p>
+<p>格式:函数名();</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//  函数声明</span></span><br><span class="line">  alert(<span class="string">"函数使用"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(); <span class="comment">// 函数调用</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4><p>函数有了参数，才有了灵魂， 可以实现多次重复使用了。</p>
+<p>在调用函数时，您可以向其传递值，这些值被称为参数。</p>
+<p>这些参数可以在函数中使用。</p>
+<p>您可以发送任意多的参数，由逗号 (,) 分隔：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">形参<span class="number">1</span>,形参<span class="number">2.</span>..</span>) </span>&#123;   <span class="comment">//  函数声明</span></span><br><span class="line">  alert(<span class="string">"函数使用"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(实参<span class="number">1</span>，实参<span class="number">2.</span>.);  <span class="comment">// 函数调用</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h4><p>有时，我们会希望函数将值返回调用它的地方。</p>
+<p>通过使用 return 语句就可以实现。</p>
+<p>在使用 return 语句时，函数会停止执行，并返回指定的值。</p>
+<p>在函数体内部用 return 定义返回值，一个函数只能有一个返回值。</p>
+<p>比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">num1,num2</span>) </span>&#123;   <span class="comment">//  函数声明</span></span><br><span class="line">  <span class="keyword">return</span>  num1 + num2;  <span class="comment">// 返回值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun(<span class="number">1</span>,<span class="number">2</span>);  ---&gt;  返回值结果就是 <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求任意两个数的最大值。</li>
+<li>求一个长方体的体积。</li>
+</ul>
+<h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h3><hr>
+<p>数组的作用是:使用单独的变量名来存储一系列的值。</p>
+<h4 id="数组定义声明"><a href="#数组定义声明" class="headerlink" title="数组定义声明"></a>数组定义声明</h4><p>两种方式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [];</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组赋值或者修改"><a href="#数组赋值或者修改" class="headerlink" title="数组赋值或者修改"></a>数组赋值或者修改</h4><p>声明定义的时候直接给值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"张三"</span>, <span class="string">"李四"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="string">"张三"</span>, <span class="string">"李四"</span>];</span><br></pre></td></tr></table></figure>
+
+<p>先声明空数组，后给值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [];</span><br><span class="line"></span><br><span class="line">arr[<span class="number">0</span>] = <span class="string">"张三"</span>;</span><br><span class="line"></span><br><span class="line">arr[<span class="number">1</span>] = <span class="string">"李四"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>修改也是如此执行。</p>
+<h4 id="数组访问"><a href="#数组访问" class="headerlink" title="数组访问"></a>数组访问</h4><p>通过指定数组名以及索引号码，你可以访问某个特定的元素。</p>
+<p>格式： 数组名[索引号]</p>
+<p>比如我们已经声明了： var arr = [“张三”,”李四”];</p>
+<p>要想使用张三，就用数组名配合索引号: arr[0];</p>
+<p>注意： 我们的数组索引号 是从 0 开始 以此类推。李四就是 arr[1].</p>
+<h4 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h4><p>我们可以通过 length（长度） 这个属性来检测数组的长度，就是里面有几个值。</p>
+<p>let arr = [“张三”,”李四”];</p>
+<p>arr.length; 结果是 2 里面就是 2 个值的意思。</p>
+<p>注意： arr 的 索引号 是 0 1 ， 但是 arr 的长度是 2。</p>
+<h4 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h4><p>遍历： 就是从头到尾打量一遍。</p>
+<p>比如遍历查找，就是说从第一个值一直查到最后一个值。</p>
+<p>谁可以实现这个操作，对啦，就是我们前面学过的 循环，最常用的是 for。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">"张三"</span>, <span class="string">"李四"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Javascript-数据类型"><a href="#Javascript-数据类型" class="headerlink" title="Javascript 数据类型"></a>Javascript 数据类型</h3><hr>
+<p>前面我们讲过的数据类型是基本数据类型。</p>
+<h4 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h4><p>字符型 string</p>
+<p>数值型 number</p>
+<p>布尔型 boolean</p>
+<p>空型 null</p>
+<p>未定义型 undefined</p>
+<h4 id="复杂数据类型（object）"><a href="#复杂数据类型（object）" class="headerlink" title="复杂数据类型（object）"></a>复杂数据类型（object）</h4><p>复杂数据类型就一个是 object 对象（通常我们也成为 引用数据类型）</p>
+<p>刘德华信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">原名：刘福荣</span><br><span class="line"></span><br><span class="line">身高：174</span><br><span class="line"></span><br><span class="line">出生年：1961年</span><br><span class="line"></span><br><span class="line">生肖：牛</span><br><span class="line"></span><br><span class="line">祖籍：广东省江门市</span><br><span class="line"></span><br><span class="line">歌曲： 冰雨、恭喜发财等</span><br><span class="line"></span><br><span class="line">电影： 无间道、 天下无贼等</span><br></pre></td></tr></table></figure>
+
+<p>如果你要用一个数组表示 ，别人一般是看不懂的。</p>
+<p>var arr = [“刘德华”, “牛”, “冰雨”,”天下无贼”];</p>
+<p>因为信息非常的复杂了，就不要用变量去存储了，这里我们可以用 复杂数据类型 object 来存储复杂数据。</p>
+<p>应该这样表示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">刘德华.年龄</span><br><span class="line"></span><br><span class="line">刘德华.生肖</span><br><span class="line"></span><br><span class="line">刘德华.唱歌</span><br><span class="line"></span><br><span class="line">刘德华.演戏</span><br></pre></td></tr></table></figure>
+
+<h4 id="object-对象的声明"><a href="#object-对象的声明" class="headerlink" title="object 对象的声明"></a>object 对象的声明</h4><p>具体语法格式如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 对象名 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+
+<p>比如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> andy = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+
+<p>此时我们就声明了一个 andy 的对象。</p>
+<h4 id="object-对象的赋值"><a href="#object-对象的赋值" class="headerlink" title="object 对象的赋值"></a>object 对象的赋值</h4><p>属性赋值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">andy.age = <span class="number">55</span>;</span><br><span class="line"></span><br><span class="line">andy.weight = <span class="number">140</span>;</span><br></pre></td></tr></table></figure>
+
+<p>方法赋值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">andy.sing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"冰雨"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">andy.movie = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  alert(<span class="string">"无间道"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="object-对象的访问"><a href="#object-对象的访问" class="headerlink" title="object 对象的访问"></a>object 对象的访问</h4><p>利用点来访问即可。</p>
+<p>对象.属性 比如 andy.age arr.lenght</p>
+<p>对象.方法 比如 andy.sing() window.alert();</p>
+<p>由上面可以得到 属性和方法最大的区别在于 属性没有括号，方法有括号。</p>
+<h3 id="常用的对象方法"><a href="#常用的对象方法" class="headerlink" title="常用的对象方法"></a>常用的对象方法</h3><hr>
+<p>javascript 给我们提供了很多的内置对象，方便我们进行操作。</p>
+<p>内置对象，类似我们手机，买来之后，手机里面是不是已经装有打电话功能了，发短信功能了，甚至 聊天 的， 上网的功能都给我们集成了。</p>
+<p>不需要我们自己安装而直接使用功能的，我们称之为内置功能。</p>
+<p>不需要我们自己定义而直接使用对象的，我们称之为内置对象。</p>
+<p>其实我们前面接触过太多了， window.alert() document.write()</p>
+<h4 id="数学对象-Math"><a href="#数学对象-Math" class="headerlink" title="数学对象 Math"></a>数学对象 Math</h4><p>因为后期我们 JavaScript 使用数学公式和计算的地方太多了，因此这里不需要我们自己声明对象，JavaScript 直接给我们内置好了数学对象 Math 对象，我们可以使用它的内置方法来帮助我们进行计算，如果你数学没学好，那就请你记住这些数学对象方法的使用。</p>
+<img src="/2019/09/04/js-started/math.png" title="数学对象">
+
+<h4 id="数组方法-Array"><a href="#数组方法-Array" class="headerlink" title="数组方法 Array"></a>数组方法 Array</h4><p>push：向数组的末尾增加一项</p>
+<p>unshift：向数组开头增加一项</p>
+<p>pop:删除数组的末尾项</p>
+<p>shift:删除数组开头项</p>
+<p><strong>拼接:</strong></p>
+<p>concat:把一个数组和另一个数组拼接在一起</p>
+<p>join:把数组中的每一项 按照指定的分隔符拼接成字符串</p>
+<p><strong>排序:</strong></p>
+<p>reverse:倒序数组 返回值倒序数组 原有数组改变</p>
+<p>sort:根据匿名函数进行冒泡排序 b-a 倒序 a-b 升序</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/18/FlexBox/" rel="next" title="FlexBox">
+                <i class="fa fa-chevron-left"></i> FlexBox
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/25/node/" rel="prev" title="Node.js 项目入门">
+                Node.js 项目入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hhpon</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#javaScript-简介"><span class="nav-number">1.</span> <span class="nav-text">javaScript 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#javaScript-是脚本语言"><span class="nav-number">1.1.</span> <span class="nav-text">javaScript 是脚本语言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-组成"><span class="nav-number">1.2.</span> <span class="nav-text">javascript 组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javaScript-作用"><span class="nav-number">1.3.</span> <span class="nav-text">javaScript 作用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#学习-JavaScript-你要知道的"><span class="nav-number">2.</span> <span class="nav-text">学习 JavaScript 你要知道的</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在-Web-页面里添加-JavaScript"><span class="nav-number">2.1.</span> <span class="nav-text">在 Web 页面里添加 JavaScript</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript-基本格式"><span class="nav-number">2.2.</span> <span class="nav-text">JavaScript 基本格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与用户交互"><span class="nav-number">3.</span> <span class="nav-text">与用户交互</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#alert-弹出警示框"><span class="nav-number">3.1.</span> <span class="nav-text">alert 弹出警示框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#prompt-弹出输入框"><span class="nav-number">3.2.</span> <span class="nav-text">prompt 弹出输入框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#console-log-控制台输出"><span class="nav-number">3.3.</span> <span class="nav-text">console.log 控制台输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-write-文档打印输出"><span class="nav-number">3.4.</span> <span class="nav-text">document.write 文档打印输出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">4.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量声明"><span class="nav-number">4.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量名的命名规范"><span class="nav-number">4.2.</span> <span class="nav-text">变量名的命名规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">5.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检测数字类型-typeof-运算符"><span class="nav-number">5.1.</span> <span class="nav-text">检测数字类型 typeof 运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作符"><span class="nav-number">6.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#算术操作符"><span class="nav-number">6.1.</span> <span class="nav-text">算术操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#比较操作符"><span class="nav-number">6.2.</span> <span class="nav-text">比较操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">6.3.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#赋值操作符"><span class="nav-number">6.4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逗号操作符"><span class="nav-number">6.5.</span> <span class="nav-text">逗号操作符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型转换"><span class="nav-number">7.</span> <span class="nav-text">数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#转换为字符型"><span class="nav-number">7.1.</span> <span class="nav-text">转换为字符型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用运算符方法转换字符型（隐式转换）"><span class="nav-number">7.1.1.</span> <span class="nav-text">使用运算符方法转换字符型（隐式转换）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String-函数转换（显示转换）"><span class="nav-number">7.1.2.</span> <span class="nav-text">String() 函数转换（显示转换）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#toString-函数转换"><span class="nav-number">7.1.3.</span> <span class="nav-text">toString()函数转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换为数值型"><span class="nav-number">7.2.</span> <span class="nav-text">转换为数值型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用运算符方法转换数值型（隐式转换）"><span class="nav-number">7.2.1.</span> <span class="nav-text">使用运算符方法转换数值型（隐式转换）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#利用-Number-数据类型转换-（显示转换）"><span class="nav-number">7.2.2.</span> <span class="nav-text">利用 Number() 数据类型转换 （显示转换）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#利用-parseInt、-parseFloat-函数转换"><span class="nav-number">7.2.3.</span> <span class="nav-text">利用 parseInt、 parseFloat 函数转换</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换为布尔型"><span class="nav-number">7.3.</span> <span class="nav-text">转换为布尔型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用运算符方法转换布尔型（隐式转换）"><span class="nav-number">7.3.1.</span> <span class="nav-text">使用运算符方法转换布尔型（隐式转换）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#利用-Boolean-数据类型转换-（显示转换）"><span class="nav-number">7.3.2.</span> <span class="nav-text">利用 Boolean() 数据类型转换 （显示转换）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件语句"><span class="nav-number">8.</span> <span class="nav-text">条件语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#if-条件语句"><span class="nav-number">8.1.</span> <span class="nav-text">if 条件语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Javascript-三元操作符"><span class="nav-number">8.2.</span> <span class="nav-text">Javascript 三元操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多分支-if-语句"><span class="nav-number">8.3.</span> <span class="nav-text">多分支 if 语句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#switch-case-多分支判断语句"><span class="nav-number">8.4.</span> <span class="nav-text">switch case 多分支判断语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-number">9.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for-循环"><span class="nav-number">9.1.</span> <span class="nav-text">for 循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双重-for-循环"><span class="nav-number">9.2.</span> <span class="nav-text">双重 for 循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while-循环"><span class="nav-number">9.3.</span> <span class="nav-text">while 循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#break-和-continue-语句"><span class="nav-number">9.4.</span> <span class="nav-text">break 和 continue 语句</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-function"><span class="nav-number">10.</span> <span class="nav-text">函数 function</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的声明"><span class="nav-number">10.1.</span> <span class="nav-text">函数的声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的调用"><span class="nav-number">10.2.</span> <span class="nav-text">函数的调用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的参数"><span class="nav-number">10.3.</span> <span class="nav-text">函数的参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的返回值"><span class="nav-number">10.4.</span> <span class="nav-text">函数的返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组-Array"><span class="nav-number">11.</span> <span class="nav-text">数组(Array)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组定义声明"><span class="nav-number">11.1.</span> <span class="nav-text">数组定义声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组赋值或者修改"><span class="nav-number">11.2.</span> <span class="nav-text">数组赋值或者修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组访问"><span class="nav-number">11.3.</span> <span class="nav-text">数组访问</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组长度"><span class="nav-number">11.4.</span> <span class="nav-text">数组长度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组遍历"><span class="nav-number">11.5.</span> <span class="nav-text">数组遍历</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript-数据类型"><span class="nav-number">12.</span> <span class="nav-text">Javascript 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型"><span class="nav-number">12.1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复杂数据类型（object）"><span class="nav-number">12.2.</span> <span class="nav-text">复杂数据类型（object）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-对象的声明"><span class="nav-number">12.3.</span> <span class="nav-text">object 对象的声明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-对象的赋值"><span class="nav-number">12.4.</span> <span class="nav-text">object 对象的赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-对象的访问"><span class="nav-number">12.5.</span> <span class="nav-text">object 对象的访问</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的对象方法"><span class="nav-number">13.</span> <span class="nav-text">常用的对象方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数学对象-Math"><span class="nav-number">13.1.</span> <span class="nav-text">数学对象 Math</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组方法-Array"><span class="nav-number">13.2.</span> <span class="nav-text">数组方法 Array</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hhpon</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

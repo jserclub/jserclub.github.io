@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="声明:var 1var arr=[1,2,3]//声明一个数组  声明了一个叫arr的数组，数组里依次是1、2、3三个数字 1var str=&amp;quot;123&amp;quot;//声明一个字符串  声明了一个叫str的字符串，字符串里有123，注意，它已经不是数字了  获取长度:length 1XXX.length//获取名为XXX的字符串或数组的长度  比如有一个叫arr数组里依次是1、2、3三个数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组和字符串的相关方法">
+<meta property="og:url" content="http://yoursite.com/2020/07/14/arry-and-string/index.html">
+<meta property="og:site_name" content="Hhpon">
+<meta property="og:description" content="声明:var 1var arr=[1,2,3]//声明一个数组  声明了一个叫arr的数组，数组里依次是1、2、3三个数字 1var str=&amp;quot;123&amp;quot;//声明一个字符串  声明了一个叫str的字符串，字符串里有123，注意，它已经不是数字了  获取长度:length 1XXX.length//获取名为XXX的字符串或数组的长度  比如有一个叫arr数组里依次是1、2、3三个数">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-07-22T23:15:00.208Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组和字符串的相关方法">
+<meta name="twitter:description" content="声明:var 1var arr=[1,2,3]//声明一个数组  声明了一个叫arr的数组，数组里依次是1、2、3三个数字 1var str=&amp;quot;123&amp;quot;//声明一个字符串  声明了一个叫str的字符串，字符串里有123，注意，它已经不是数字了  获取长度:length 1XXX.length//获取名为XXX的字符串或数组的长度  比如有一个叫arr数组里依次是1、2、3三个数">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/14/arry-and-string/">
+
+
+
+
+
+  <title>数组和字符串的相关方法 | Hhpon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hhpon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/14/arry-and-string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hhpon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hhpon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组和字符串的相关方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-14T14:00:36+08:00">
+                2020-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="声明-var"><a href="#声明-var" class="headerlink" title="声明:var"></a>声明:var</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr=[1,2,3]//声明一个数组</span><br></pre></td></tr></table></figure>
+
+<p>声明了一个叫arr的数组，数组里依次是1、2、3三个数字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;123&quot;//声明一个字符串</span><br></pre></td></tr></table></figure>
+
+<p>声明了一个叫str的字符串，字符串里有123，注意，它已经不是数字了</p>
+<hr>
+<h3 id="获取长度-length"><a href="#获取长度-length" class="headerlink" title="获取长度:length"></a>获取长度:length</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.length//获取名为XXX的字符串或数组的长度</span><br></pre></td></tr></table></figure>
+
+<p>比如有一个叫arr数组里依次是1、2、3三个数字，调用<code>arr.length</code>将会得到3<br>比如有一个叫str的字符串，字符串里是abcd，调用<code>str.length</code>将会得到4<br>当然这行代码直接执行没有意义，你需要声明一个变量把获取到的长度存起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=XXX.length</span><br></pre></td></tr></table></figure>
+
+<p>或者直接把长度显示在控制台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(XXX.length)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="截取-slice"><a href="#截取-slice" class="headerlink" title="截取:slice"></a>截取:slice</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.slice(a,b)//返回一个新的数组，包含下标从a到b（不包括该元素）的arr中的数字</span><br></pre></td></tr></table></figure>
+
+<p>可使用负值从数组的尾部选取数字，如果b未被规定，那么 slice()方法会选取从a到数组结尾的所有数字。<br>比如arr数组里原先依次是1、2、3、4、5五个数字，调用<code>arr.slice(0,3)</code>将会得到1、2、3<br>当然这行代码直接执行没有意义，你需要声明一个数组把操作之后的数组存起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr1=arr.slice(0,3)</span><br></pre></td></tr></table></figure>
+
+<p>或者直接把截取的数组显示在控制台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(arr.slice(0,3))</span><br></pre></td></tr></table></figure>
+
+<p>或者直接修改原来的数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr=arr.slice(0,3)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.slice(a,b)//返回一个新的字符串，包含下标从a到b（不包括该元素）的str中的字符</span><br></pre></td></tr></table></figure>
+
+<p>比如str字符串里原先有12345,调用<code>str.slice(0,3)</code>将会得到123<br>当然这行代码直接执行也没有意义，你可能会遇到的情况和对应的操作方法同<em>截取数组</em></p>
+<hr>
+<h3 id="合并-concat"><a href="#合并-concat" class="headerlink" title="合并:concat"></a>合并:concat</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr1.concat(arr2)//返回一个新的数组，把arr2接在arr1后面</span><br></pre></td></tr></table></figure>
+
+<p>比如arr1数组里原先依次是1、2、3三个数字，arr2数组里原先依次是4、5、6三个数字，调用<code>arr1.concat(arr2)</code>将会得到1、2、3、4、5、6<br>当然这行代码直接执行也没有意义，你可能会遇到的情况和对应的操作方法同<em>截取数组</em><br>字符串合并非常简单，直接用<code>+</code>就行了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str1+str2//把str2接在str1后面</span><br></pre></td></tr></table></figure>
+
+<p>比如str1字符串里原先有123，比如str2字符串里原先有456，调用<code>str1+str2</code>将会得到123456<br>当然这行代码直接执行没有意义，你需要声明一个字符串把操作之后的字符串存起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a=str1+str2</span><br></pre></td></tr></table></figure>
+
+<p>或者直接把合并后的字符串显示在控制台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str1+str2)</span><br></pre></td></tr></table></figure>
+
+<p>或者直接修改原来的字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str1=str1+str2</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><hr>
+<h4 id="查找首次出现位置-indexOf"><a href="#查找首次出现位置-indexOf" class="headerlink" title="查找首次出现位置:indexOf"></a>查找首次出现位置:indexOf</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.indexOf(a,b)//查找名为XXX的字符串或数组从下标b开始首次出现a的下标</span><br></pre></td></tr></table></figure>
+
+<p>其中，b可以省略不写，当b省略不写时默认从头开始查找，当找不到时返回<code>-1</code><br>比如arr数组里原先依次是1、2、3、4、1五个数字,调用<code>arr.indexOf(1)</code>将会得到0，调用<code>arr.indexOf(2)</code>将会得到1，调用<code>arr.indexOf(1,2)</code>将会得到4，调用<code>arr.indexOf(2，2)</code>将会得到-1<br>比如str字符串里原先有Hello,world!，调用<code>str.indexOf(&quot;Hello&quot;)</code>将会得到0，调用<code>str.indexOf(&quot;world&quot;)</code>将会得到6，调用<code>str.indexOf(&quot;Hello&quot;,2)</code>将会得到-1<br>当然这行代码直接执行没有意义，你可以把得出的结论显示在控制台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(arr.indexOf(1))</span><br></pre></td></tr></table></figure>
+
+<p>也可以用于接下来说的添加、替换和删除</p>
+<h4 id="判断在不在数组里-in"><a href="#判断在不在数组里-in" class="headerlink" title="判断在不在数组里:in"></a>判断在不在数组里:in</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a in XXX///判断a是否在名为XXX的数组里</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3、4、5五个数字，调用<code>1 in arr</code>将会得到true，调用<code>0 in arr</code>将会得到false<br>当然这行代码直接执行没有意义，你可以把得出的结论显示在控制台中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(1 in arr)</span><br></pre></td></tr></table></figure>
+
+<p>也可以用在判断语句和循环语句中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(1 in arr)</span><br><span class="line">	do something</span><br><span class="line">while(1 in arr)</span><br><span class="line">	do something</span><br></pre></td></tr></table></figure>
+
+<p>字符串没有这种用法，但是可以利用<em>查找字符串首次出现位置</em>实现</p>
+<hr>
+<h3 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h3><hr>
+<h4 id="在末尾添加-push"><a href="#在末尾添加-push" class="headerlink" title="在末尾添加:push"></a>在末尾添加:push</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.push(a)//在名为XXX的数组末尾添加a这个数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3三个数字，执行<code>arr.push(4)</code>这个代码之后数组里就依次是1、2、3、4四个数字了<br>在字符串末尾添加字符串同<em>合并字符串</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX+&quot;abc&quot;//在名为XXX的字符串末尾添加abc这个字符串</span><br></pre></td></tr></table></figure>
+
+<p>比如str字符串里原先有123，调用<code>str+&quot;abc&quot;</code>将会得到123abc<br>当然这行代码直接执行也没有意义，你可能会遇到的情况和对应的操作方法同<em>合并字符串</em></p>
+<h4 id="在最前面添加-unshift"><a href="#在最前面添加-unshift" class="headerlink" title="在最前面添加:unshift"></a>在最前面添加:unshift</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.unshift(a)//在名为XXX的数组末尾添加a这个数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3三个数字，执行<code>arr.push(4)</code>这个代码之后数组里就依次是4、1、2、3四个数字了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在字符串最前面添加字符串同*合并字符串*</span><br><span class="line">&quot;abc&quot;+XXX//在名为XXX的字符串前面添加abc这个字符串</span><br></pre></td></tr></table></figure>
+
+<p>比如str字符串里原先有123，调用<code>&quot;abc&quot;+str</code>将会得到abc123<br>当然这行代码直接执行也没有意义，你可能会遇到的情况和对应的操作方法同<em>合并字符串</em></p>
+<h4 id="在中间添加-splice"><a href="#在中间添加-splice" class="headerlink" title="在中间添加:splice"></a>在中间添加:splice</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.splice(a,0,b)//在名为XXX的数组的第a项**之前**添加b这个数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2两个数字，执行<code>arr.splice(1,0,3)</code>这个代码之后数组里就依次是1、3、2三个数字了<br>比如arr数组里原先依次是1、2、3、4、5五个数字，想要在2前面加上6这个数字，则需要执行<code>arr.splice(arr.indexOf(2),0,6)</code><br>在字符串中间添加字符串是非常麻烦的，首先需要先把原先的字符串从要添加的位置分开成两部分，然后将前半部分不动，中间是要添加的字符串，最后是后半部分合并在一起</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var newstr = str.slice(0,5)+&quot;-local&quot;+str.slice(5)</span><br></pre></td></tr></table></figure>
+
+<p>比如str字符串里原先有Hello,world!<br>执行这段代码后newstr就变成了Hello-local,world!</p>
+<hr>
+<h3 id="替换-splice"><a href="#替换-splice" class="headerlink" title="替换:splice"></a>替换:splice</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.splice(a,b,c)//将名为XXX的数组从第a+1项开始的连续b项替换成c</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3、4、5五个数字，执行<code>arr.splice(2,1,6)</code>这个代码之后数组里就依次是1、2、6、4、5了，而执行<code>arr.splice(2,2,6)</code>这个代码之后数组里就依次是1、2、6、5了<br>字符串的替换就是截取不需要替换的部分，与需要替换的字符串拼接<br>比如arr数组里原先依次是1、2、3、4、5五个数字，想要把其中的2替换成6，则需要执行<code>arr.splice(arr.indexOf(2),1,6)</code></p>
+<hr>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><hr>
+<h4 id="从末尾删除-pop"><a href="#从末尾删除-pop" class="headerlink" title="从末尾删除:pop"></a>从末尾删除:pop</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.pop()//删除名为XXX的数组末尾的数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3、4四个数字，执行<code>arr.pop()</code>这个代码之后数组里就依次是1、2、3三个数字了<br>在字符串末尾删除字符串同<em>截取字符串</em></p>
+<h4 id="从最前面删除-shift"><a href="#从最前面删除-shift" class="headerlink" title="从最前面删除:shift"></a>从最前面删除:shift</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.shift()//删除名为XXX的数组最前面的数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3、4四个数字，执行<code>arr.shift()</code>这个代码之后数组里就依次是2、3、4三个数字了<br>在字符串末尾删除字符串同<em>截取字符串</em></p>
+<h4 id="从中间删除-splice"><a href="#从中间删除-splice" class="headerlink" title="从中间删除:splice"></a>从中间删除:splice</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.splice(a,b)//删除名为XXX的数组从第a+1项开始连续b项的数字</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是1、2、3、4、5五个数字，执行<code>arr.splice(2,1)</code>这个代码之后数组里就依次是1、2、4、5了，而执行<code>arr.splice(2,2)</code>这个代码之后数组里就依次是1、2、5了<br>字符串从中间删除就是截取不需要删除的部分拼接在一起<br>比如arr数组里原先依次是1、2、3、4、5五个数字，想要把其中的2删除，则需要执行<code>arr.splice(arr.indexOf(2),1)</code></p>
+<hr>
+<h3 id="排序-sort"><a href="#排序-sort" class="headerlink" title="排序:sort"></a>排序:sort</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.sort()//将名为XXX的数组中的数字从小到大排列</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是5、2、1、3、4五个数字，执行<code>arr.sort()</code>这个代码之后数组里就依次是1、2、3、4、5五个数字了<br>字符串没有排序功能</p>
+<hr>
+<h3 id="反转：reverse"><a href="#反转：reverse" class="headerlink" title="反转：reverse"></a>反转：reverse</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX.reverse()//将名为XXX的数组反转</span><br></pre></td></tr></table></figure>
+
+<p>比如arr数组里原先依次是5、2、1、3、4五个数字，执行<code>arr.sort()</code>这个代码之后数组里就依次是4、3、1、2、5五个数字了</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/06/single-page application/" rel="next" title="单页面应用">
+                <i class="fa fa-chevron-left"></i> 单页面应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hhpon</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明-var"><span class="nav-number">1.</span> <span class="nav-text">声明:var</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取长度-length"><span class="nav-number">2.</span> <span class="nav-text">获取长度:length</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#截取-slice"><span class="nav-number">3.</span> <span class="nav-text">截取:slice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并-concat"><span class="nav-number">4.</span> <span class="nav-text">合并:concat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">5.</span> <span class="nav-text">查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找首次出现位置-indexOf"><span class="nav-number">5.1.</span> <span class="nav-text">查找首次出现位置:indexOf</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#判断在不在数组里-in"><span class="nav-number">5.2.</span> <span class="nav-text">判断在不在数组里:in</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加"><span class="nav-number">6.</span> <span class="nav-text">添加</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在末尾添加-push"><span class="nav-number">6.1.</span> <span class="nav-text">在末尾添加:push</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在最前面添加-unshift"><span class="nav-number">6.2.</span> <span class="nav-text">在最前面添加:unshift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在中间添加-splice"><span class="nav-number">6.3.</span> <span class="nav-text">在中间添加:splice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换-splice"><span class="nav-number">7.</span> <span class="nav-text">替换:splice</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">8.</span> <span class="nav-text">删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#从末尾删除-pop"><span class="nav-number">8.1.</span> <span class="nav-text">从末尾删除:pop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从最前面删除-shift"><span class="nav-number">8.2.</span> <span class="nav-text">从最前面删除:shift</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从中间删除-splice"><span class="nav-number">8.3.</span> <span class="nav-text">从中间删除:splice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序-sort"><span class="nav-number">9.</span> <span class="nav-text">排序:sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反转：reverse"><span class="nav-number">10.</span> <span class="nav-text">反转：reverse</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hhpon</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

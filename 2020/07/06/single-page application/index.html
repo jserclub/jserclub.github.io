@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="背景 在早期的 Web 应用中，前端的作用很弱，业务逻辑和数据处理都在后端，后端给前端返回一个 HTML 页面，前端只负责展示。在这种模式下，单个 HTML 页面被当做一个功能原件，表单提交，超链接跳转都可以用来重新请求新的 HTML 页面，从而达到给用户展示新的页面的目的。在这种方式中，你可以感觉到页面总是在不停的刷新，一个点击可能都需要等待很久，这是因为，当页面变化时，所有资源都需要重新请求。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单页面应用">
+<meta property="og:url" content="http://yoursite.com/2020/07/06/single-page application/index.html">
+<meta property="og:site_name" content="Hhpon">
+<meta property="og:description" content="背景 在早期的 Web 应用中，前端的作用很弱，业务逻辑和数据处理都在后端，后端给前端返回一个 HTML 页面，前端只负责展示。在这种模式下，单个 HTML 页面被当做一个功能原件，表单提交，超链接跳转都可以用来重新请求新的 HTML 页面，从而达到给用户展示新的页面的目的。在这种方式中，你可以感觉到页面总是在不停的刷新，一个点击可能都需要等待很久，这是因为，当页面变化时，所有资源都需要重新请求。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/07/06/single-page%20application/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/06/single-page%20application/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/07/06/single-page%20application/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/07/06/single-page%20application/1.png">
+<meta property="og:updated_time" content="2020-07-22T23:15:00.249Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="单页面应用">
+<meta name="twitter:description" content="背景 在早期的 Web 应用中，前端的作用很弱，业务逻辑和数据处理都在后端，后端给前端返回一个 HTML 页面，前端只负责展示。在这种模式下，单个 HTML 页面被当做一个功能原件，表单提交，超链接跳转都可以用来重新请求新的 HTML 页面，从而达到给用户展示新的页面的目的。在这种方式中，你可以感觉到页面总是在不停的刷新，一个点击可能都需要等待很久，这是因为，当页面变化时，所有资源都需要重新请求。">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/06/single-page%20application/2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/06/single-page application/">
+
+
+
+
+
+  <title>单页面应用 | Hhpon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hhpon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/06/single-page application/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hhpon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hhpon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">单页面应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-06T23:14:57+08:00">
+                2020-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p> 在早期的 Web 应用中，前端的作用很弱，业务逻辑和数据处理都在后端，后端给前端返回一个 HTML 页面，前端只负责展示。在这种模式下，单个 HTML 页面被当做一个功能原件，表单提交，超链接跳转都可以用来重新请求新的 HTML 页面，从而达到给用户展示新的页面的目的。在这种方式中，你可以感觉到页面总是在不停的刷新，一个点击可能都需要等待很久，这是因为，<code>当页面变化时，所有资源都需要重新请求</code>。这些问题导致了用户体验不佳，也浪费了资源。单页应用便很好的解决了这些问题。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p> 单页应用的全称是<code>single-page application</code>，简称 SPA，它是一种网站应用的模型，它可以动态重写当前的页面来与用户交互，而不需要重新加载整个页面。常用于PC端官网、购物等网站.<br> 简单来说——<strong>SPA是只有一张Web页面的应用</strong>，一种从Web服务器加载的富客户端，单页面跳转仅刷新局部资源 ，公共资源(js、css等)仅需加载一次。</p>
+<h3 id="基本元素：页面路由"><a href="#基本元素：页面路由" class="headerlink" title="基本元素：页面路由"></a>基本元素：页面路由</h3><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p> SPA 的一个重要实现就是改变路由时，页面不刷新。实现这个功能，通常有两种方式：使用<code>window.history</code>对象或 <code>location.hash</code>。</p>
+<hr>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li><p><strong>流畅性更好</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">单页应用的流畅性让 Web 应用更像桌面端或 Native 应用了。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>前后端分离</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">相对于传统的 Web 应用，单页应用做到了前后端分离.</span><br><span class="line">后端只负责处理数据提供接口，页面逻辑和页面渲染都交给了前端。</span><br><span class="line">各司其职，不会把前后端的逻辑混杂在一起；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>应用广泛</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目前时兴的 React、Vue、Angular 等前端框架均采用了 SPA 原则。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>前端掌握了主动权</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">让前端代码更复杂和庞大，模块化、组件化以及架构设计都变得越来越重要。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>无刷新体验</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用户在切换页面过程中不会频繁被“打断”.</span><br><span class="line">因为界面框架都在本地，对用户的响应非常及时，因此提升了用户体验；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>减轻服务器压力</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务器只用出数据就可以，不用管展示逻辑和页面合成，吞吐能力会提高几倍；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>API 共享</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">同一套后端程序代码，不用修改就可以用于Web界面、手机、平板等多种客户端；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>完全的前端组件化</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">前端开发不再以页面为单位，更多地采用组件化的思想.</span><br><span class="line">代码结构和组织方式更加规范化，便于修改和调整。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li><p><strong><em>对SEO不太友好</em></strong>，尽管可以通过Prerender预渲染优化等技术解决一部分，但是相对还是不容易索引到它；</p>
+<p>（注：SEO本质是一个服务器向另一个服务器发起请求，解析请求内容;Prerender可以对这些使用了前端渲染的 JavaScript 框架做的网站进行良好的 SEO 优化, 可以对 JavaScript 页面进行静态化。）</p>
+<p><strong>解决方案：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">服务端渲染：服务器合成完整的 html 文件再输出到浏览器；</span><br><span class="line">页面预渲染；</span><br><span class="line">路由采用h5 history模式；</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong><em>易出错</em></strong>，需要使用程序管理前进、后退、地址栏等信息；</p>
+</li>
+<li><p><strong><em>较高的前端开发门槛</em></strong>，对技术能力要求较高，需要对设计模式有一定理解，因为面对不是一个简单的页面，而是一个运行在浏览器环境里面的桌面软件。</p>
+</li>
+<li><p><strong><em>首屏加载慢</em></strong>：如果不对路由进行处理，在加载首页的时候，就会将所有组件全部加载，并向服务器请求数据，这必将拖慢加载速度；通过查看Network，发现整个网站加载试讲长达10几秒，加载时间最长的就是js、css文件和媒体文件及图片<br><strong>解决方案：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Vue-router懒加载：Vue-router懒加载就是按需加载组件，只有当路由被访问时才会加载对应的组件，而不是在加载首页的时候就  加载，项目越大，对首屏加载的速度提升得越明显。</span><br><span class="line">使用CDN加速：在做项目时，我们会用到很多库，采用CDN加载可以加快加载速度。</span><br><span class="line">异步加载组件：这里可以参考别人的介绍（https://segmentfault.com/a/1190000012138052）</span><br><span class="line">服务端渲染：服务端渲染还能对seo优化起到作用，有利于搜索引擎抓取更多有用的信息（如果页面纯前端渲染，搜索引擎抓取到的就只是空页面）</span><br><span class="line">不适合开发大型项目：大型项目中可能会涉及大量的DOM操作、复杂的动画效果，也就不适合使用Vue、react框架进行开发。</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h3 id="单页面与多页面对比"><a href="#单页面与多页面对比" class="headerlink" title="单页面与多页面对比"></a>单页面与多页面对比</h3><ol>
+<li>结构示意图</li>
+</ol>
+<img src="/2020/07/06/single-page%20application/2.png"><img src="/2020/07/06/single-page%20application/3.png">
+<ol start="2">
+<li>具体对比分析</li>
+</ol>
+<img src="/2020/07/06/single-page%20application/4.jpg">
+
+<hr>
+<h3 id="实现流程"><a href="#实现流程" class="headerlink" title="实现流程"></a>实现流程</h3><img src="/2020/07/06/single-page%20application/1.png">
+
+<hr>
+<h3 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h3><h4 id="1-hash模式和history模式"><a href="#1-hash模式和history模式" class="headerlink" title="1.hash模式和history模式"></a>1.hash模式和history模式</h4><p> Hash: 这里的hash是指url尾巴后的#号及后面的字符。</p>
+<p> 这里的#和css里的#是一个意思。hash也称作<code>锚点</code>，本身是用来做页面定位的，它可以使对应id的元素显示在可是区域内。<br> 由于hash值变化不会导致浏览器向服务器发出请求，而且hash改变会触发hashchange事件，浏览器的进后退也能对其进行控制，所以人们在 html5 的 history 出现前，基本都是使用 hash 来实现前端路由的。</p>
+<p> History: HTML5规范提供了history.pushState和history.replaceState来进行路由控制。通过这两个方法可以改变url且不向服务器发送请求。同时不会像hash有一个#,更加的美观。但是history路由需要服务器的支持，并且需将所有的路由重定向倒根页面。</p>
+<h4 id="2-history与hash比较"><a href="#2-history与hash比较" class="headerlink" title="2.history与hash比较"></a>2.history与hash比较</h4><p>  Hash 能兼容到<code>IE8</code>， history 只能兼容到 <code>IE10</code>；</p>
+<p>  首先，Hash 本来是拿来做页面定位的，如果拿来做路由的话，原来的锚点功能就不能用了。</p>
+<p>  其次，<code>Hash 的传参是基于 url 的</code>，如果要传递复杂的数据，会有体积的限制，而 history 模式不仅可以在url里放参数,还可以将数据存放在一个特定的对象中。</p>
+<p>  vue-router默认Hash模式，使用 URL 的 Hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。不过这种模式要玩好，还需要后台配置支持。</p>
+<p>  因为我们的应用是个单页客户端应用，如果后台没有正确的配置。当用户在浏览器直接访问<a href="http://oursite.com/user/id" target="_blank" rel="noopener">http://oursite.com/user/id</a> 就会返回 404，这就不好看了。所以，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个index.html 页面，这个页面就是你 app 依赖的页面。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/08/vue/" rel="next" title="Vue 项目入门">
+                <i class="fa fa-chevron-left"></i> Vue 项目入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/14/arry-and-string/" rel="prev" title="数组和字符串的相关方法">
+                数组和字符串的相关方法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hhpon</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">2.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本元素：页面路由"><span class="nav-number">3.</span> <span class="nav-text">基本元素：页面路由</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作原理"><span class="nav-number">4.</span> <span class="nav-text">工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-number">5.</span> <span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点"><span class="nav-number">6.</span> <span class="nav-text">缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单页面与多页面对比"><span class="nav-number">7.</span> <span class="nav-text">单页面与多页面对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现流程"><span class="nav-number">8.</span> <span class="nav-text">实现流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拓展"><span class="nav-number">9.</span> <span class="nav-text">拓展</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-hash模式和history模式"><span class="nav-number">9.1.</span> <span class="nav-text">1.hash模式和history模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-history与hash比较"><span class="nav-number">9.2.</span> <span class="nav-text">2.history与hash比较</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hhpon</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

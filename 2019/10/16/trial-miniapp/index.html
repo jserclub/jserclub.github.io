@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="认识小程序 示例小程序的目录结构一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：   app.js 会在小程序打开的时候执行一些初始化的操作，如声明变量之类app.json 用来对微信小程序进行全局配置比如小程序的首页是什么，小程序页面的窗口表现，设置 tab 菜单栏app.wxss 各个页面共用该页面的样式 一个小程序页面由四个文件组成，分别是：   第一个小程序作品   所需资源">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jser训练营">
+<meta property="og:url" content="http://yoursite.com/2019/10/16/trial-miniapp/index.html">
+<meta property="og:site_name" content="Hhpon">
+<meta property="og:description" content="认识小程序 示例小程序的目录结构一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：   app.js 会在小程序打开的时候执行一些初始化的操作，如声明变量之类app.json 用来对微信小程序进行全局配置比如小程序的首页是什么，小程序页面的窗口表现，设置 tab 菜单栏app.wxss 各个页面共用该页面的样式 一个小程序页面由四个文件组成，分别是：   第一个小程序作品   所需资源">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/main.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/page.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/16/trial-miniapp/mode.png">
+<meta property="og:updated_time" content="2020-07-22T23:15:00.567Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jser训练营">
+<meta name="twitter:description" content="认识小程序 示例小程序的目录结构一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：   app.js 会在小程序打开的时候执行一些初始化的操作，如声明变量之类app.json 用来对微信小程序进行全局配置比如小程序的首页是什么，小程序页面的窗口表现，设置 tab 菜单栏app.wxss 各个页面共用该页面的样式 一个小程序页面由四个文件组成，分别是：   第一个小程序作品   所需资源">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/16/trial-miniapp/main.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/16/trial-miniapp/">
+
+
+
+
+
+  <title>Jser训练营 | Hhpon</title><meta name="robots" content="noindex">
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hhpon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/16/trial-miniapp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hhpon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hhpon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Jser训练营</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-16T19:47:34+08:00">
+                2019-10-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="认识小程序"><a href="#认识小程序" class="headerlink" title="认识小程序"></a>认识小程序</h3><hr>
+<h4 id="示例小程序的目录结构"><a href="#示例小程序的目录结构" class="headerlink" title="示例小程序的目录结构"></a>示例小程序的目录结构</h4><p>一个小程序主体部分由三个文件组成，必须放在项目的根目录，如下：</p>
+<img src="/2019/10/16/trial-miniapp/main.png">
+
+<p>app.js 会在小程序打开的时候执行一些初始化的操作，如声明变量之类<br>app.json 用来对微信小程序进行全局配置比如小程序的首页是什么，小程序页面的窗口表现，设置 tab 菜单栏<br>app.wxss 各个页面共用该页面的样式</p>
+<p>一个小程序页面由四个文件组成，分别是：</p>
+<img src="/2019/10/16/trial-miniapp/page.png">
+
+<h3 id="第一个小程序作品"><a href="#第一个小程序作品" class="headerlink" title="第一个小程序作品"></a>第一个小程序作品</h3><hr>
+<img src="/2019/10/16/trial-miniapp/2.jpg" width="300">
+
+<h4 id="所需资源"><a href="#所需资源" class="headerlink" title="所需资源"></a>所需资源</h4><img src="/2019/10/16/trial-miniapp/1.png" width="200">
+<img src="/2019/10/16/trial-miniapp/2.png" width="100">
+<img src="/2019/10/16/trial-miniapp/3.png" width="50">
+<img src="/2019/10/16/trial-miniapp/4.png" width="30">
+
+<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><hr>
+<p>在 app.json 文件中创建新的页面路径</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"pages"</span>: [<span class="string">"pages/main/main"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>微信开发者工具内找到 pages 文件夹，并在文件夹内新建 main 文件夹，在 main 文件夹内新建文件 main.wxml、main.wxss、main.js、main.json</p>
+<p>打开 main.wxml 文件，在文件内输入如下内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="小程序的基本组成"><a href="#小程序的基本组成" class="headerlink" title="小程序的基本组成"></a>小程序的基本组成</h4><p>一个小程序页面是由四个文件组成的，wxml 负责呈现页面的基本内容，比如文字、图片、音频、视频这些都是由 HTML 来呈现的。<br>但是为什么我们的图片会居中显示呢?字体为什么有的大有的笑呢？为什么有的是斜体呢？那么这些是由什么来控制的呢？<br>事实上，wxss 就是用来控制 wxml 以什么样子显示的；<br>小程序中一般都会存在几个按钮或者可以点击的图片，点击这些按钮或者图片之后的动作就是由 Javascript 来定义的。</p>
+<h4 id="重要概念-标签"><a href="#重要概念-标签" class="headerlink" title="重要概念 - 标签"></a>重要概念 - 标签</h4><p>我们回想一下刚刚 Hello World 的例子，那个用尖括号括起来的东西是什么？</p>
+<p><strong>我们把这些以尖括号开始并且以尖括号结束的代码成为标签</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--你的第一个小程序将要用到最多的标签--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--引入图片的标签--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--以上是需要在我们的小程序中将要用到的小程序，那么除了这些还有哪些小程序标签呢？--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">text</span>&gt;</span><span class="tag">&lt;/<span class="name">text</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">map</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">icon</span>&gt;</span><span class="tag">&lt;/<span class="name">icon</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在大家初次写标签的时候很多人总是会把单词写错，这里告诉大家一个不容易出错的窍门，编辑器是有提示功能的，我们使用编辑器的提示功能会大大减少我们出错的可能。</p>
+<p>小程序中还有很多标签等着你去发现哦~</p>
+<h4 id="填充页面内容"><a href="#填充页面内容" class="headerlink" title="填充页面内容"></a>填充页面内容</h4><h5 id="第一步了解-view-标签"><a href="#第一步了解-view-标签" class="headerlink" title="第一步了解 view 标签"></a>第一步了解 view 标签</h5><p>试一下这个例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World hello world</span><br></pre></td></tr></table></figure>
+
+<p>再试一下这个例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">view</span>&gt;</span> <span class="tag">&lt;<span class="name">view</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>经过这两个例子我们可以发现，我们的 view 标签会让标签内容换行显示。这是一个重要特点，对于填充页面内容很重要！</strong></p>
+<h5 id="第二步了解-image-标签"><a href="#第二步了解-image-标签" class="headerlink" title="第二步了解 image 标签"></a>第二步了解 image 标签</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://jserclub.github.io/2019/08/13/trial-class/2.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"widthFix"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width: 200rpx"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>标签属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">src - 图片资源地址</span><br><span class="line">mode - 图片裁剪、缩放的模式</span><br></pre></td></tr></table></figure>
+
+<p>mode 部分合法值</p>
+<img src="/2019/10/16/trial-miniapp/mode.png" title="部分合法值">
+
+<p>最后再试一下这个例子</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://jserclub.github.io/2019/08/13/trial-class/2.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"widthFix"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width: 200rpx"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://jserclub.github.io/2019/08/13/trial-class/2.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"widthFix"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width: 200rpx"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>我们可以发现多个 image 标签写在一起的话，这些图片会在一行内显示。这也是一个重要特点，对于页面填充很重要！</strong></p>
+<p><strong>思考</strong></p>
+<p>如果相邻的两个图片我们希望他们不在一行内显示应该怎么办？</p>
+<h5 id="第三步开始根据目标页面写代码"><a href="#第三步开始根据目标页面写代码" class="headerlink" title="第三步开始根据目标页面写代码"></a>第三步开始根据目标页面写代码</h5><p>我们先来填充页面的基本结构，也就是说先把 wxml 的代码内容敲出来。</p>
+<p>在开始之前我们来看一下页面的内容，上来就是 Jser 与头像这两张图片，引入图片的方式我们知道是使用 image 标签，但是 image 有一个重要的特点是什么呀？<br>所以我根据我自己的编程经验，建议大家把页面的每一块都用 view 标签包裹起来，这样子等我们使用 wxss 布局的时候会特别方便。</p>
+<h3 id="给页面添加样式"><a href="#给页面添加样式" class="headerlink" title="给页面添加样式"></a>给页面添加样式</h3><hr>
+<p>页面的内容可以添加进去了，但是看起来一定很丑对不对；那么怎么才能做成我们想要的样子呢？接下来就该是样式登场的时候了。</p>
+<h4 id="回忆我们学习的两个标签-view-image"><a href="#回忆我们学习的两个标签-view-image" class="headerlink" title="回忆我们学习的两个标签 view image"></a>回忆我们学习的两个标签 view image</h4><p><strong>思考：这两个标签的特点分别是什么？这两个特点是什么决定的呢？我能不能让 view 的特点消失呢？</strong></p>
+<p>事实上决定这两个标签的特点的是样式属性 — display；请看微信小程序开发者工具</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">属性名: <span class="selector-tag">display</span></span><br><span class="line">属性值: <span class="selector-tag">block</span> (块级元素)  <span class="selector-tag">inline</span> (行内元素) <span class="selector-tag">inline-block</span> (行内块)</span><br></pre></td></tr></table></figure>
+
+<p>块级元素： 相邻标签会换行显示，可设置宽高<br>行内元素： 相邻标签会在一行显示，不可设置宽高<br>行内块元素： 相邻标签会在一行显示，可设置宽高</p>
+<h4 id="那么我们如何给我们的标签添加样式呢？"><a href="#那么我们如何给我们的标签添加样式呢？" class="headerlink" title="那么我们如何给我们的标签添加样式呢？"></a>那么我们如何给我们的标签添加样式呢？</h4><p>还记得我们如何给图片设置大小吗？</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span></span></span><br><span class="line"><span class="tag">  <span class="attr">src</span>=<span class="string">"https://jserclub.github.io/2019/08/13/trial-class/2.png"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">mode</span>=<span class="string">"widthFix"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">style</span>=<span class="string">"width: 200rpx"</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这个里面的style就是设置样式的关键字。</p>
+<h4 id="那我们将要用到哪些样式属性呢？"><a href="#那我们将要用到哪些样式属性呢？" class="headerlink" title="那我们将要用到哪些样式属性呢？"></a>那我们将要用到哪些样式属性呢？</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">width</span> <span class="selector-tag">-</span> 设置盒子的宽度</span><br><span class="line"><span class="selector-tag">height</span> <span class="selector-tag">-</span> 设置盒子的高度</span><br><span class="line"><span class="selector-tag">font-size</span> <span class="selector-tag">-</span> 设置字体大小</span><br><span class="line"><span class="selector-tag">font-weight</span> <span class="selector-tag">-</span> 指定了字体的粗细程度。一些字体只提供<span class="selector-tag">normal</span>和<span class="selector-tag">bold</span>两种值。</span><br><span class="line"><span class="selector-tag">text-align</span> <span class="selector-tag">-</span> 规定盒子内的行内元素的对齐方式 <span class="selector-tag">left</span>、<span class="selector-tag">right</span>、<span class="selector-tag">center</span></span><br><span class="line"><span class="selector-tag">margin</span> <span class="selector-tag">-</span> 外边距，暂时可以理解为相邻盒子的间距</span><br></pre></td></tr></table></figure>
+
+<!-- flag of hidden posts -->
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hhpon</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#认识小程序"><span class="nav-number">1.</span> <span class="nav-text">认识小程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例小程序的目录结构"><span class="nav-number">1.1.</span> <span class="nav-text">示例小程序的目录结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个小程序作品"><span class="nav-number">2.</span> <span class="nav-text">第一个小程序作品</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#所需资源"><span class="nav-number">2.1.</span> <span class="nav-text">所需资源</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hello-World"><span class="nav-number">3.</span> <span class="nav-text">Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小程序的基本组成"><span class="nav-number">3.1.</span> <span class="nav-text">小程序的基本组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重要概念-标签"><span class="nav-number">3.2.</span> <span class="nav-text">重要概念 - 标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#填充页面内容"><span class="nav-number">3.3.</span> <span class="nav-text">填充页面内容</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#第一步了解-view-标签"><span class="nav-number">3.3.1.</span> <span class="nav-text">第一步了解 view 标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第二步了解-image-标签"><span class="nav-number">3.3.2.</span> <span class="nav-text">第二步了解 image 标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#第三步开始根据目标页面写代码"><span class="nav-number">3.3.3.</span> <span class="nav-text">第三步开始根据目标页面写代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给页面添加样式"><span class="nav-number">4.</span> <span class="nav-text">给页面添加样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#回忆我们学习的两个标签-view-image"><span class="nav-number">4.1.</span> <span class="nav-text">回忆我们学习的两个标签 view image</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#那么我们如何给我们的标签添加样式呢？"><span class="nav-number">4.2.</span> <span class="nav-text">那么我们如何给我们的标签添加样式呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#那我们将要用到哪些样式属性呢？"><span class="nav-number">4.3.</span> <span class="nav-text">那我们将要用到哪些样式属性呢？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hhpon</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
