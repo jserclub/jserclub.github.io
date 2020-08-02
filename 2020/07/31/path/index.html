@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基本概念首先想要区分它们，我们先来看看他们的官方定义 绝对路径：指目录下的绝对位置，直接到达目标位置，通常是从盘符开始的路径。相对路径：指由这个文件所在的路径引起的跟其它文件（或文件夹）的路径关系。  深入理解大家看完了官方解释是不是有一些疑惑？我们来深入解释一下它们。 绝对路径是文件实际存储的位置，是计算机中的完整路径，起点是系统的根目录，也就是盘符，比如C:\Users\king\Deskto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="相对路径和绝对路径">
+<meta property="og:url" content="http://yoursite.com/2020/07/31/path/index.html">
+<meta property="og:site_name" content="Hhpon">
+<meta property="og:description" content="基本概念首先想要区分它们，我们先来看看他们的官方定义 绝对路径：指目录下的绝对位置，直接到达目标位置，通常是从盘符开始的路径。相对路径：指由这个文件所在的路径引起的跟其它文件（或文件夹）的路径关系。  深入理解大家看完了官方解释是不是有一些疑惑？我们来深入解释一下它们。 绝对路径是文件实际存储的位置，是计算机中的完整路径，起点是系统的根目录，也就是盘符，比如C:\Users\king\Deskto">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/07/31/path/img.png">
+<meta property="og:updated_time" content="2020-08-02T12:20:12.867Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="相对路径和绝对路径">
+<meta name="twitter:description" content="基本概念首先想要区分它们，我们先来看看他们的官方定义 绝对路径：指目录下的绝对位置，直接到达目标位置，通常是从盘符开始的路径。相对路径：指由这个文件所在的路径引起的跟其它文件（或文件夹）的路径关系。  深入理解大家看完了官方解释是不是有一些疑惑？我们来深入解释一下它们。 绝对路径是文件实际存储的位置，是计算机中的完整路径，起点是系统的根目录，也就是盘符，比如C:\Users\king\Deskto">
+<meta name="twitter:image" content="http://yoursite.com/2020/07/31/path/img.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/07/31/path/">
+
+
+
+
+
+  <title>相对路径和绝对路径 | Hhpon</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hhpon</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/31/path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hhpon">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hhpon">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">相对路径和绝对路径</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-31T09:54:51+08:00">
+                2020-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>首先想要区分它们，我们先来看看他们的官方定义</p>
+<p><strong>绝对路径</strong>：指目录下的绝对位置，直接到达目标位置，通常是从盘符开始的路径。<br><strong>相对路径</strong>：指由这个文件所在的路径引起的跟其它文件（或文件夹）的路径关系。</p>
+<hr>
+<h3 id="深入理解"><a href="#深入理解" class="headerlink" title="深入理解"></a>深入理解</h3><p>大家看完了官方解释是不是有一些疑惑？<br>我们来深入解释一下它们。</p>
+<p>绝对路径是<code>文件实际存储的位置</code>，是计算机中的完整路径，起点是系统的根目录，也就是盘符，比如<br><code>C:\Users\king\Desktop\all\编程练习题</code></p>
+<p>相对路径是以当前文件活动窗口目录为根目录，<code>进行向上或者向下寻找的过程</code>，比如<br><code>../../all/编程练习题</code></p>
+<hr>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><p><strong>相对路径</strong><br>以下为建立路径所使用的几个特殊符号，及其所代表的意义。</p>
+<p>“./”：代表目前所在的目录。</p>
+<p>“../”：代表上一层目录。</p>
+<p>以”/”开头：代表根目录。<br><strong>绝对路径</strong><br>绝对路径名的指定是从树型目录结构顶部的根目录开始到某个目录或文件的路径，由一系列连续的目录组成，中间用斜线分隔，直到要指定的目录或文件，路径中的最后一个名称即为要指向的目录或文件。之所以称为绝对，意指当所有网页引用同一个文件时，所使用的路径都是一样的。(包括URL和物理路径)<br>如：<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a>      C:\Users\king\Desktop\all\编程练习题</p>
+<hr>
+<h3 id="如何区分"><a href="#如何区分" class="headerlink" title="如何区分"></a>如何区分</h3><p>绝对路径和相对路径像两个胞生兄弟，总让人分不清楚他们。<br>但别急，或许下边的故事可以帮到你。</p>
+<p><strong>故事一</strong><br>不知道大家有没有玩过黄金矿工这个游戏，简单来说就是个寻找宝藏的过程。</p>
+<p>  有天绝对路径和相对路径相约一起寻找宝藏，而宝藏其实就是你所需要的文件。<br>  绝对路径找宝藏的过程非常顺利，有神仙给他加成，找到了一条直接通往宝藏的隧道,并且隧道有且只有一个，就相当于绝对路径去找文件的时候只需要输入准确地址，就可以一步直接找到宝藏（文件）。<br>  但相对路径找宝藏就困难了许多，因为没有仙人的相助，只能依靠自己的努力。首先他需要确定宝藏相对于他自己的位置，确定了方向之后，就开始一关一关的过，每过一关就离宝藏更近一点，最终找到宝藏(文件)。</p>
+<img src="/2020/07/31/path/img.png">
+
+<p><strong>故事二</strong><br>如果你不喜欢找宝藏，那我们就去爬山吧（导游张东升）！</p>
+<p>某天绝对路径和相对路径一起爬山，山的某处有个节目在唱小白船，他们都想去听一听。<br>绝对路径财大气粗，选择了做缆车，无论节目在什么地方，他都能直接抵达。<br>但相对路径就没那么好运，比较穷，得用走路的方法才能到达节目地点，但好在他耳朵特别好使，他可以听出来节目是在他的山上还是山下，判断完方向之后，才能一级一级的找到节目所在位置。</p>
+<hr>
+<p><strong>总而言之，绝对路径是个小锦鲤，而相对路径是个实力派。</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>前端开发或者你的程序需要在不同的设备中来回移动的话,必须用相对路径,因为你换设备就会改变绝对路径,就类似于你用u盘的时候,你的盘符都不是固定的一个道理。相对路径比较灵活,只要层级结构没有变化,比如上面的a和b文件夹只是换了个名字,那么不影响寻址,但是绝对路径就要好好确认下路径有没有问题了。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/14/arry-and-string/" rel="next" title="数组和字符串的相关方法">
+                <i class="fa fa-chevron-left"></i> 数组和字符串的相关方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/08/02/js-modules/" rel="prev" title="js-modules">
+                js-modules <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hhpon</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深入理解"><span class="nav-number">2.</span> <span class="nav-text">深入理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何区分"><span class="nav-number">4.</span> <span class="nav-text">如何区分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hhpon</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
