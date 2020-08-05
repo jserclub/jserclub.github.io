@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/if-more.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/switch.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/math.png">
-<meta property="og:updated_time" content="2020-07-22T23:15:00.225Z">
+<meta property="og:updated_time" content="2020-08-05T12:20:12.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js 基础入门">
 <meta name="twitter:description" content="javaScript 简介 如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。 JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。 JavaScript 在用户浏">
@@ -369,7 +369,7 @@
 
 <p>说明： 如果用户单击提示框的取消按钮，则返回 null。如果用户单击确认按钮，则返回输入字段当前显示的文本。</p>
 <h4 id="console-log-控制台输出"><a href="#console-log-控制台输出" class="headerlink" title="console.log 控制台输出"></a>console.log 控制台输出</h4><p>console.log(“内容”) 的功能是在控制台打印括号内内容。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'content);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'content'</span>);</span><br></pre></td></tr></table></figure>
 
 <h4 id="document-write-文档打印输出"><a href="#document-write-文档打印输出" class="headerlink" title="document.write 文档打印输出"></a>document.write 文档打印输出</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"你好！"</span>);</span><br></pre></td></tr></table></figure>
 
@@ -447,11 +447,17 @@
 <p>parseInt(‘22px’) // 22 这样是允许的 注意和上面 Number 的区别</p>
 <p>parseInt(‘hello22’); // NaN 里面的数值内容必须以数字开头</p>
 <p>parseInt(22.94); // 22 只会留下整数部分</p>
-<h4 id="转换为布尔型"><a href="#转换为布尔型" class="headerlink" title="转换为布尔型"></a>转换为布尔型</h4><p>以下值转换为布尔型：false、undefined 、null、0、”” 结果为 false;<br>以下值转换为布尔型： true、1 结果为 true;</p>
+<h4 id="转换为布尔型"><a href="#转换为布尔型" class="headerlink" title="转换为布尔型"></a>转换为布尔型</h4><p>以下值转换为布尔型:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// false、undefined 、null、0、"" 结果为 false;</span></span><br></pre></td></tr></table></figure>
+
+<p>以下值转换为布尔型:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// true、1 结果为 true;</span></span><br></pre></td></tr></table></figure>
+
 <h5 id="使用运算符方法转换布尔型（隐式转换）"><a href="#使用运算符方法转换布尔型（隐式转换）" class="headerlink" title="使用运算符方法转换布尔型（隐式转换）"></a>使用运算符方法转换布尔型（隐式转换）</h5><p>!! 使用这个符号就可以，转换为布尔型</p>
-<p>!!”123” // true</p>
-<p>!!1 // true</p>
-<h5 id="利用-Boolean-数据类型转换-（显示转换）"><a href="#利用-Boolean-数据类型转换-（显示转换）" class="headerlink" title="利用 Boolean() 数据类型转换 （显示转换）"></a>利用 Boolean() 数据类型转换 （显示转换）</h5><p>Boolean(“123”); //返回 true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(!!<span class="string">"123"</span>) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(!!<span class="number">1</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="利用-Boolean-数据类型转换-（显示转换）"><a href="#利用-Boolean-数据类型转换-（显示转换）" class="headerlink" title="利用 Boolean() 数据类型转换 （显示转换）"></a>利用 Boolean() 数据类型转换 （显示转换）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">"123"</span>)) <span class="comment">//返回 true</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h3><hr>
 <p>顺序、选择、循环是结构化程序的基本结构。 我们前面执行的都是顺序结构， 我们现在开始学习根据不同条件而去选择执行不同的语句， 这类语句我们称为条件语句或者选择语句。</p>
 <h4 id="if-条件语句"><a href="#if-条件语句" class="headerlink" title="if 条件语句"></a>if 条件语句</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>（表达式） &#123;</span><br><span class="line"></span><br><span class="line">  语句段１； ......</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">  语句段２； ..... 　</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -468,7 +474,7 @@
 <li>如果 if 和 else 里面只有一句执行的话，可以省略花括号，否则一定要加上花括号。 建议大家还事都带上花括号。</li>
 </ul>
 <p>总结：</p>
-<p>if -else 语句是 JavaScript 中最基本的控制语句，通过它可以改变语句的执行顺序。 表达式中必须使用关系语句，来实现判断，它是作为一个布尔值来估算的。</p>
+<p>if-else 语句是 JavaScript 中最基本的控制语句，通过它可以改变语句的执行顺序。 表达式中必须使用关系语句，来实现判断，它是作为一个布尔值来估算的。</p>
 <p>例子：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">5</span> &gt; <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"正确"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"错误"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -476,14 +482,13 @@
 <h4 id="Javascript-三元操作符"><a href="#Javascript-三元操作符" class="headerlink" title="Javascript 三元操作符"></a>Javascript 三元操作符</h4><p>如名字表示的三元运算符需要三个操作数。有时候也成为三目运算符 。 它实际等价于 if else 的简写。</p>
 <p>i++ 一元运算符</p>
 <p>a+b 二元运算符</p>
-<p>num ？ a ： b ; 三元运算符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num ？ a : b ; <span class="comment">// 三元运算符</span></span><br></pre></td></tr></table></figure>
+
 <p>语法格式：</p>
 <p>条件表达式 ? 结果 1 : 结果 2;</p>
 <p>当满足条件时返回结果 1 否则返回结果 2。</p>
-<p>var b=5;</p>
-<p>(b == 5) ? a=”true” : a=”false”;</p>
-<p>document.write(“ ————————— “+a);</p>
-<p>结果： ————————— true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="number">5</span>;</span><br><span class="line">(b == <span class="number">5</span>) ? a=<span class="string">"true"</span> : a=<span class="string">"false"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(“ ————————— “+a);</span><br><span class="line">结果： ————————— <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
 <h4 id="多分支-if-语句"><a href="#多分支-if-语句" class="headerlink" title="多分支 if 语句"></a>多分支 if 语句</h4><p>if…else 语句只能选择两种结果：要么执行真，要么执行假。但有时会出现两种以上的选择，例如：</p>
 <p>一个班的考试成绩，如果是 90 分以上，则为“优秀”；</p>
 <p>如果是 60 ～ 90 分之间的，则为“良好”；</p>
@@ -528,7 +533,7 @@
 <li>外层循环执行一次，则内层循环要执行全部次数（跑完毕）。</li>
 </ul>
 <h4 id="while-循环"><a href="#while-循环" class="headerlink" title="while 循环"></a>while 循环</h4><p>基本格式：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>（条件表达式）</span><br><span class="line"></span><br><span class="line">&#123; 语句集；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件表达式)&#123; </span><br><span class="line">  语句集;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>该语句与 For 语句一样，当条件为真时，重复循环，否则退出循环。</p>
 <p><strong>For 与 while 语句</strong></p>
@@ -538,7 +543,7 @@
 <h3 id="函数-function"><a href="#函数-function" class="headerlink" title="函数 function"></a>函数 function</h3><hr>
 <p>函数:相当于一个工具，比如螺丝刀，当我们想使用的时候拿出来用，当我们不想使用的时候就放在那不起作用。而这个工具是由我们自己来创造的。<br>函数名:就是我们为工具起的名字<br>语句块:就是我们造的工具要实现的功能。</p>
 <h4 id="函数的声明"><a href="#函数的声明" class="headerlink" title="函数的声明"></a>函数的声明</h4><p>跟 let 一样声明变量一样的。 我们的函数也需要一个关键字来进行声明，具体格式如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">语句块；</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">语句块;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>function 是小写，注意区分。<br>函数名是自己定义的名字。 比如 fun 、 myFun 等。<br>函数不调用， 自己是不执行的。</p>
 <h4 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h4><p>函数声明完毕之后， 需要调用函数，才会执行函数里面的语句块。</p>
@@ -564,7 +569,7 @@
 </ul>
 <h3 id="数组-Array"><a href="#数组-Array" class="headerlink" title="数组(Array)"></a>数组(Array)</h3><hr>
 <p>数组的作用是:使用单独的变量名来存储一系列的值。</p>
-<h4 id="数组定义声明"><a href="#数组定义声明" class="headerlink" title="数组定义声明"></a>数组定义声明</h4><p>两种方式：</p>
+<h4 id="数组定义声明"><a href="#数组定义声明" class="headerlink" title="数组定义声明"></a>数组定义声明</h4><p>两种方式:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [];</span><br></pre></td></tr></table></figure>
 
 <h4 id="数组赋值或者修改"><a href="#数组赋值或者修改" class="headerlink" title="数组赋值或者修改"></a>数组赋值或者修改</h4><p>声明定义的时候直接给值。</p>
