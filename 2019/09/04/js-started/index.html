@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/if-more.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/switch.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/04/js-started/math.png">
-<meta property="og:updated_time" content="2020-08-07T09:54:06.092Z">
+<meta property="og:updated_time" content="2020-09-05T15:36:57.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Js 基础入门">
 <meta name="twitter:description" content="javaScript 简介 如果说 ajax 让 JavaScript 有了新生， 那么最近几年，HTML5 和 node 的兴起，让 JavaScript 有了质的飞越，如果以后我们想从事前端方向的发展，你务必要学好 JavaScript。 JavaScript 是网景（Netscape）公司开发的一种基于客户端浏览器、面向（基于）对象、事件驱动式的网页脚本语言。 JavaScript 在用户浏">
@@ -345,11 +345,11 @@
 <p>JavaScript 代码是和页面内容一起发送给浏览器的, 可以把 JavaScript 代码集成到 HTML 页面：</p>
 <p>(1). 嵌入式</p>
 <p>JavaScript 语句直接包含在 HTML 文件里，语法结构如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;javascript语句;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;javascript语句;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>(2). 外链式</p>
 <p>把 JavaScript 代码保存到单独的文件，然后利用 script 标签的 src（源）属性把这个文件包含到页面里。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/demo.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/demo.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <h4 id="JavaScript-基本格式"><a href="#JavaScript-基本格式" class="headerlink" title="JavaScript 基本格式"></a>JavaScript 基本格式</h4><hr>
 <p>JavaScript 程序是由一些单独的指令组成的，这些指令被称为“语句”。为了能够正确地 解释语句，浏览器对语句的书写方式有所要求。</p>
@@ -413,9 +413,9 @@
 <p>逻辑运算符的操作对象是布尔值。</p>
 <p>每个逻辑运算数返回一个布尔值 true 或者是 false。</p>
 <h4 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h4><p>作用：将等号右边结果赋值给等号左边的变量。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num;</span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">num += <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> num;</span><br><span class="line"></span><br><span class="line">num = <span class="number">10</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">num += <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 
-<h4 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>,</span><br><span class="line">  b = <span class="number">10</span>,</span><br><span class="line">  c = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="number">10</span>,</span><br><span class="line">  b = <span class="number">10</span>,</span><br><span class="line">  c = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
 
 <h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><h4 id="转换为字符型"><a href="#转换为字符型" class="headerlink" title="转换为字符型"></a>转换为字符型</h4><h5 id="使用运算符方法转换字符型（隐式转换）"><a href="#使用运算符方法转换字符型（隐式转换）" class="headerlink" title="使用运算符方法转换字符型（隐式转换）"></a>使用运算符方法转换字符型（隐式转换）</h5><p>字符串加数字,数字就会转成字符串。 + 加号</p>
 <p>比如:</p>
@@ -427,7 +427,7 @@
 <h5 id="toString-函数转换"><a href="#toString-函数转换" class="headerlink" title="toString()函数转换"></a>toString()函数转换</h5><p>语法：</p>
 <p>数值.toString();</p>
 <p>比如：</p>
-<p>var num = 123;</p>
+<p>const num = 123;</p>
 <p>num.toString() –&gt; 输出的结果为： 字符型的 “123”;</p>
 <h4 id="转换为数值型"><a href="#转换为数值型" class="headerlink" title="转换为数值型"></a>转换为数值型</h4><hr>
 <h5 id="使用运算符方法转换数值型（隐式转换）"><a href="#使用运算符方法转换数值型（隐式转换）" class="headerlink" title="使用运算符方法转换数值型（隐式转换）"></a>使用运算符方法转换数值型（隐式转换）</h5><p>数字减字符串，字符串转成数字。乘，除等跟减的转换也是一样。都可以实现隐式数据类型转换。</p>
@@ -483,7 +483,7 @@
 <p>语法格式：</p>
 <p>条件表达式 ? 结果 1 : 结果 2;</p>
 <p>当满足条件时返回结果 1 否则返回结果 2。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="number">5</span>;</span><br><span class="line">(b == <span class="number">5</span>) ? a=<span class="string">"true"</span> : a=<span class="string">"false"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(“ ————————— “+a);</span><br><span class="line">结果： ————————— <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> b=<span class="number">5</span>;</span><br><span class="line">(b == <span class="number">5</span>) ? a=<span class="string">"true"</span> : a=<span class="string">"false"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(“ ————————— “+a);</span><br><span class="line">结果： ————————— <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="多分支-if-语句"><a href="#多分支-if-语句" class="headerlink" title="多分支 if 语句"></a>多分支 if 语句</h4><p>if…else 语句只能选择两种结果：要么执行真，要么执行假。但有时会出现两种以上的选择，例如：</p>
 <p>一个班的考试成绩，如果是 90 分以上，则为“优秀”；</p>
@@ -500,7 +500,7 @@
 <img src="/2019/09/04/js-started/if-more.png" title="if多分支">
 
 <p>案例：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">  alert(<span class="string">"你还未成年！请长大以后再来报考驾照"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &lt; <span class="number">70</span>) &#123;</span><br><span class="line">  alert(<span class="string">"恭喜您成功报考驾照！"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">"您年纪太大了！已经超过了报考驾照的年纪，请安全出行！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> age = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (age &lt; <span class="number">18</span>) &#123;</span><br><span class="line">  alert(<span class="string">"你还未成年！请长大以后再来报考驾照"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (age &lt; <span class="number">70</span>) &#123;</span><br><span class="line">  alert(<span class="string">"恭喜您成功报考驾照！"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">"您年纪太大了！已经超过了报考驾照的年纪，请安全出行！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="switch-case-多分支判断语句"><a href="#switch-case-多分支判断语句" class="headerlink" title="switch case 多分支判断语句"></a>switch case 多分支判断语句</h4><p>多分支判断选择语句 。</p>
 <p>语法：</p>
@@ -580,7 +580,7 @@
 <p>修改也是如此执行。</p>
 <h4 id="数组访问"><a href="#数组访问" class="headerlink" title="数组访问"></a>数组访问</h4><p>通过指定数组名以及索引号码，你可以访问某个特定的元素。</p>
 <p>格式： 数组名[索引号]</p>
-<p>比如我们已经声明了： var arr = [“张三”,”李四”];</p>
+<p>比如我们已经声明了： const arr = [“张三”,”李四”];</p>
 <p>要想使用张三，就用数组名配合索引号: arr[0];</p>
 <p>注意： 我们的数组索引号 是从 0 开始 以此类推。李四就是 arr[1].</p>
 <h4 id="数组长度"><a href="#数组长度" class="headerlink" title="数组长度"></a>数组长度</h4><p>我们可以通过 length（长度） 这个属性来检测数组的长度，就是里面有几个值。</p>
@@ -604,7 +604,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">原名：刘福荣</span><br><span class="line"></span><br><span class="line">身高：174</span><br><span class="line"></span><br><span class="line">出生年：1961年</span><br><span class="line"></span><br><span class="line">生肖：牛</span><br><span class="line"></span><br><span class="line">祖籍：广东省江门市</span><br><span class="line"></span><br><span class="line">歌曲： 冰雨、恭喜发财等</span><br><span class="line"></span><br><span class="line">电影： 无间道、 天下无贼等</span><br></pre></td></tr></table></figure>
 
 <p>如果你要用一个数组表示 ，别人一般是看不懂的。</p>
-<p>var arr = [“刘德华”, “牛”, “冰雨”,”天下无贼”];</p>
+<p>const arr = [“刘德华”, “牛”, “冰雨”,”天下无贼”];</p>
 <p>因为信息非常的复杂了，就不要用变量去存储了，这里我们可以用 复杂数据类型 object 来存储复杂数据。</p>
 <p>应该这样表示:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">刘德华.年龄</span><br><span class="line"></span><br><span class="line">刘德华.生肖</span><br><span class="line"></span><br><span class="line">刘德华.唱歌</span><br><span class="line"></span><br><span class="line">刘德华.演戏</span><br></pre></td></tr></table></figure>
@@ -758,7 +758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -815,7 +815,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
