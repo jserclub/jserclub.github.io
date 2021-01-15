@@ -345,11 +345,11 @@
 <p>JavaScript 代码是和页面内容一起发送给浏览器的, 可以把 JavaScript 代码集成到 HTML 页面：</p>
 <p>(1). 嵌入式</p>
 <p>JavaScript 语句直接包含在 HTML 文件里，语法结构如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;javascript语句;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;javascript语句;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>(2). 外链式</p>
 <p>把 JavaScript 代码保存到单独的文件，然后利用 script 标签的 src（源）属性把这个文件包含到页面里。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/demo.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/demo.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="JavaScript-基本格式"><a href="#JavaScript-基本格式" class="headerlink" title="JavaScript 基本格式"></a>JavaScript 基本格式</h4><hr>
 <p>JavaScript 程序是由一些单独的指令组成的，这些指令被称为“语句”。为了能够正确地 解释语句，浏览器对语句的书写方式有所要求。</p>
